@@ -10,6 +10,6 @@ import 'package:gap/gap.dart';
 
 import 'package:flutter_svg/flutter_svg.dart';
 
-part 'login_screen.dart';
+part 'login_buttons_widget.dart';
 
 part 'auth_state_notifier.dart';
