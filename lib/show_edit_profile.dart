@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter/services.dart';
 
 void showEditProfileDialog(BuildContext context, WidgetRef ref) {
   Widget buildPhoto(BuildContext context, WidgetRef ref) => Center(
@@ -28,7 +29,10 @@ void showEditProfileDialog(BuildContext context, WidgetRef ref) {
                       Expanded(child: buildPhoto(context, ref)),
                       Text(
                           FirebaseAuth.instance.currentUser!.displayName ?? ''),
-                      Text(FirebaseAuth.instance.currentUser!.uid)
+                      GestureDetector(
+                          onTap: () => Clipboard.setData(ClipboardData(
+                              text: FirebaseAuth.instance.currentUser!.uid)),
+                          child: Text(FirebaseAuth.instance.currentUser!.uid))
                       // ...ref
                       //     .watch(docSP(
                       //         'userInfo/${FirebaseAuth.instance.currentUser?.uid}'))
