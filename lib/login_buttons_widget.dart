@@ -1,4 +1,4 @@
-part of login;
+part of flutter_firebase_auth;
 
 const loginGitHub = "loginGitHub";
 const loginGoogle = "loginGoogle";
@@ -83,7 +83,7 @@ class LoginButtonsWidget extends ConsumerWidget {
               child: Container(
                 margin: const EdgeInsets.only(right: 20),
                 child: SvgPicture.asset('/assets/$imageName.svg',
-                    package: 'login', width: 30, height: 30),
+                    package: 'flutter_firebase_auth', width: 30, height: 30),
               ),
             ),
             SizedBox(width: 180, child: Text(title)),
